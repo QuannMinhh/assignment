@@ -1,0 +1,53 @@
+<div class="container text-center mt-3 mb-3 col-md-8 d-flex justify-content-center align-items-center">
+   <table class="table table-success mx-auto" border="1" style="border-collapse: collapse; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+      <tr>
+         <th class="h1 text text-danger" colspan="7">ATN toy's store management</th>
+      </tr>
+      <tr>
+         <th colspan="5">
+            <form action="/toy/search" method="post">
+               <input class="form-control" type="search" name="keyword" placeholder="Search by movie title">
+            </form>
+         </th>
+         <th colspan="2">
+            <a class="btn btn-primary" href="/toy/ascending">Sort by duration ascending</a>
+            <a class="btn btn-success" href="/toy/descending">Sort by duration descending</a>
+         </th>
+        
+      </tr>
+      <tr class="h5">
+         <th style="color: blue; white-space: nowrap;" >Toys name</th>
+         <th style="color: blue; padding-left: 35px;">Brand</th>
+         <th style="color: blue; padding-left: 35px;">Category</th>
+         <th style="color: blue; padding-left: 35px;">Price</th>
+         <th style="color: blue; padding-left: 35px;">Quantity</th>
+         <th style="color: blue; padding-left: 35px;">Picture</th>
+          <th>
+            <a class="btn btn-primary" href="/toy/add">Add</a>
+         </th>
+      </tr>
+      {{#each toys }}
+      <tr>
+         <th style="padding-left: 35px;">{{ name }}</th>
+         <th style="padding-left: 35px;">{{ brand }}</th>
+         <th style="padding-left: 35px;">{{ category }}</th>
+         <th style="padding-left: 35px;">{{ price }}</th>
+         <th style="padding-left: 35px;">{{ quantity }}</th>
+         <th style="padding-left: 35px;">
+            <img src="{{ picture }}" width="150" height="150">
+         </th>
+         <th>
+            <a class="btn btn-danger" href="/toy/delete/{{_id}}" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
+
+
+            <a class="btn btn-primary" href="/toy/editToy/{{ _id}}">Edit</a>
+         </th>
+      </tr>
+      {{/each}}
+      <script>
+         function confirmDelete() {
+            return confirm("Are you sure you want to delete this toy?");
+         }
+      </script>
+   </table>
+</div>

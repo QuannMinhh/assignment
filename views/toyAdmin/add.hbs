@@ -1,0 +1,61 @@
+<div class="container">
+  <h1 class="text-center">Add new toy</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form action="/toy/add" method="POST">
+        <table class="table">
+          <tr>
+            <td>Toy's name</td>
+            <td>
+              <input type="text" name="name" id="name" class="form-control" required>
+            </td>
+          </tr>
+          <tr>
+            <td>Brand</td>
+            <td>
+              <input type="text" name="brand" id="brand" class="form-control" required maxlength="8">
+            </td>
+          </tr>
+           <tr>
+            <td>Category</td>
+            <td>
+              <select action="/toy/add {{toy.id}}" name="category" id="category" class="form-control" required>
+                <option value="Boy">Boy</option>
+                <option value="Girl">Girl</option>
+                <option value="Figure">Figure</option>
+      <!-- Thêm các option khác tương ứng với danh sách các category -->
+            </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>  
+              <input type="number" name="price" id="price" class="form-control" required min="100">
+            </td>
+          </tr>
+          <tr>
+            <td>Quantity</td>
+            <td>
+              <input type="number" name="quantity" id="quantity" class="form-control" required >
+            </td>
+          </tr>
+          <tr>
+            <td>Picture</td>
+            <td>
+              <input type="text" name="picture" id="picture" class="form-control" required>
+            </td>
+          </tr>
+          <tr>
+            <td>Describe</td>
+            <td>
+              <input type="describe" name="describe" id="describe" class="form-control" required>
+            </td>
+          </tr>
+        </table>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

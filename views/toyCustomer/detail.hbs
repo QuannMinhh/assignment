@@ -1,0 +1,47 @@
+<style>
+    .red-text {
+      color: red;
+      font-size: 5em;
+    }
+  </style>
+<div class="container col-md-8 mt-3 mb-3">
+   <div class="row">
+      <div class="col">
+         <img src="{{products.picture}}" alt="">
+      </div>
+      <div class="col">
+         <table class="table table-bordered">
+            <tr>
+               <th class="text-center red-text" colspan="2">{{products.name}}</th>
+               
+            </tr>
+            <tr>
+               <th>Brand</th>
+               <td>{{ products.brand }}</td>
+            </tr>
+            <tr>
+               <th>Price</th>
+               <td>${{ products.price }}</td>
+            </tr>
+            <tr>
+               <th>In stock</th>
+               <td>{{ products.quantity }}</td>
+            </tr>
+            <tr>
+               <th>Describe</th>
+               <td>{{ products.describe }}</td>
+            </tr>
+            <tr class="text-center">
+               <th colspan="2">
+                  <form action="/order" method="post">
+                     <input type="hidden" name="title" value="{{ name}}">
+                     <input type="hidden" name="price" value="{{ price }}">
+                     <input type="number" name="quantity" min="1" max="{{quantity}}">
+                     <input type="submit" class="btn btn-primary" value="ORDER"></input>
+                  </form>
+               </th>
+            </tr>
+         </table>
+      </div>
+   </div>
+</div>
